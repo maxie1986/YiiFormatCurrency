@@ -131,7 +131,7 @@ class FormatCurrency extends CWidget {
         	if(isset($this->name)){
         		$this->id = $this->name;
         		echo CHtml::hiddenField($this->name, $this->value, array("class" => "currency_input"));
-        		echo CHtml::textField($this->name, $this->value, array("class"=>"currency","id"=>$this->id."_text"));
+        		echo CHtml::textField($this->name."_text", $this->value, array("class"=>"currency","id"=>$this->id."_text"));
         	}
 	}
 
