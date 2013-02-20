@@ -1,9 +1,11 @@
 <?php
 
 /**
- * JNotify class file.
+ * @category   Text
+ * @author     Maximo Estrada <maxie1986@gmail.com>
+ * @license    BSD
+ * @link       https://github.com/maxie1986/YiiFormatCurrency
  */
-
 class FormatCurrency extends CWidget {
 
 	private $baseUrl;
