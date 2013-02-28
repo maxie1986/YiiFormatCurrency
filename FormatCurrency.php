@@ -1,11 +1,9 @@
 <?php
 
 /**
- * @category   Text
- * @author     Maximo Estrada <maxie1986@gmail.com>
- * @license    BSD
- * @link       https://github.com/maxie1986/YiiFormatCurrency
+ * JNotify class file.
  */
+
 class FormatCurrency extends CWidget {
 
 	private $baseUrl;
@@ -17,6 +15,7 @@ class FormatCurrency extends CWidget {
 	public $name;
 	public $value;
 	public $options;
+	public $htmlOptions = array();
 	private $defaultOptions = array();
 
 	/**
@@ -127,8 +126,16 @@ class FormatCurrency extends CWidget {
 	public function renderInputField(){
 		if(isset($this->model) && isset($this->attribute)){
 			$this->id=$this->attribute;
+
+			if(!isset($this->htmlOptions["id"])){
+				$this->htmlOptions["id"] = $this->id."_text";
+			}
+			if(!isset($this->htmlOptions["class"])){
+				$this->htmlOptions["class"] = "currency";
+			} else
+				$this->htmlOptions["class"].=" currency";
         	echo CHtml::activeHiddenField($this->model, $this->attribute, array('id'=>$this->id, "class" => "currency_input"));
-        	echo CHtml::textField($this->name, $this->value, array("class"=>"currency","id"=>$this->id."_text"));
+        	echo CHtml::textField($this->name, $this->value, $this->htmlOptions);
         }else
         	if(isset($this->name)){
         		$this->id = $this->name;
