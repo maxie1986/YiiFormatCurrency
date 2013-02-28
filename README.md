@@ -56,6 +56,8 @@ $this->widget("FormatCurrency",
 
 You can set the following options :
 
+**htmlOptions** : The regular htmlOptions array can be set to the widget
+
 **decimalSymbol** : The symbol to be used to separate the dollars from the cents. Default from Yii::app()->getLocale()->getNumberSymbol("decimal")
 
 **digitGroupSymbol** : The symbol to be used to separate the thousands place when grouping the numbers. Default from Yii::app()->getLocale()->getNumberSymbol("group")
